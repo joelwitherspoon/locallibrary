@@ -1,0 +1,30 @@
+{% extends "catalog\base.html" %}
+
+{% block content %}
+  <h1>Author: {{ author.last_name }}, {{ author.first_name }}</h1>
+  {{ author.date_of_birth }} -
+    {% if author.date_of_death %}
+      {{ author.date_of_death }}
+    {% else %}
+
+    {% endif %}
+
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Books</h4>
+
+    {% for copy in author.book_set.all %}
+      <hr>
+
+    <p>
+      <a href="{% url 'catalog:book-detail' copy.pk %}">{{ copy.title }} </a> <br/>
+      {{ copy.summary }}
+    </p>
+      <!--{% if copy.status != 'a' %}
+        <p><strong>Due to be returned:</strong> {{ copy.due_back }}</p>
+      {% endif %}
+      <p><strong>Imprint:</strong> {{ copy.imprint }}</p>
+      <p class="text-muted"><strong>Id:</strong> {{ copy.id }}</p> -->
+    {% endfor %}
+  </div>
+{% endblock %}
