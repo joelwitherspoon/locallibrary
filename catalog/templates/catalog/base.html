@@ -25,7 +25,7 @@
                     <li><a href="{% url 'catalog:my-borrowed' %}"> My Borrowed</a></li>
                     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
                     {% if perms.catalog.can_mark_returned %}
-                       <li><a href="{% url 'catalog:borrowed' %}">All Borrowed</a></li>
+                       <li><a href="{% url 'catalog:all-borrowed' %}">All Borrowed</a></li>
                     {% else %}
                     {% endif %}
                 {% else %}
