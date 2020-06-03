@@ -161,3 +161,21 @@ class AuthorDelete(DeleteView):
     """Deletes and Author"""
     model = Author
     success_url = reverse_lazy('authors')
+
+
+from catalog.models import Book
+
+class BookCreate(CreateView):
+    """Create Book"""
+    model = Book
+    fields = '__all__'
+
+class BookUpdate(UpdateView):
+    """Update Book"""
+    model = Book
+    fields = '__all__'
+
+class BookDelete(DeleteView):
+    """Delete Book"""
+    model = Book
+    success_url = reverse_lazy('book-detail')
