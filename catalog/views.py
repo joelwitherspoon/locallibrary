@@ -12,7 +12,7 @@ from catalog.forms import RenewBookForm
 
 # Create your views here.
 
-@login_required
+#@login_required
 def index(request):
     """View function for home page of site."""
 
@@ -60,7 +60,7 @@ class BookListView(generic.ListView):
     # context_object_name  = 'my_book_list'
     # queryset = Book.objects.filter(title__icontains='war')[:5]
     # template_name = 'books/book_list.html'
-    paginate_by = 5
+    paginate_by = 10
 
 
 class BookDetailView(generic.DetailView):
@@ -68,16 +68,16 @@ class BookDetailView(generic.DetailView):
     model = Book
 
 
-class AuthorListView(LoginRequiredMixin, generic.ListView):
-    """Book list"""
+class AuthorListView(generic.ListView):
+    """Author list"""
     model = Author
     # context_object_name  = 'my_book_list'
     # queryset = Book.objects.filter(title__icontains='war')[:5]
-    # template_name = 'books/book_list.html'
-    paginate_by = 5
+    template_name = 'books/book_list.html'
+    paginate_by = 10
 
 
-class AuthorDetailView(LoginRequiredMixin, generic.DetailView):
+class AuthorDetailView(generic.DetailView):
     """Detail view of a book"""
     model = Author
 

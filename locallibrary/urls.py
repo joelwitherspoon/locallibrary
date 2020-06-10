@@ -26,14 +26,16 @@ urlpatterns = [
 
 if settings.DEBUG:
     import debug_toolbar
-
     urlpatterns = [
 
                       path('dbug/', include(debug_toolbar.urls)),
                   ] + urlpatterns
 
-    # Add Django site authentication urls (for login, logout, password management)
+# Add Django site authentication urls (for login, logout, password management)
 
-    urlpatterns += [
+urlpatterns = [
                       path('accounts/', include('django.contrib.auth.urls')),
-                  ]
+                  ] + urlpatterns
+
+
+
