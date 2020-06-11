@@ -32,7 +32,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 #Make it hard to hijack user sessions
 SESSION_COOKIE_SECURE = os.environ.get('DJANGO_SESSION_COOKIE_SECURE', '') != 'False'
 
-ALLOWED_HOSTS = ['joelw.org', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['joelw.org', '127.0.0.1', 'localhost','locallibrary1212.herokuapp.com']
 
 
 # Application definition
